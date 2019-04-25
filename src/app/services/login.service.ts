@@ -23,6 +23,7 @@ export class LoginService {
 	 * Desencripto la cookie
 	 */
 	public auth(): user {
+		this.cookie = this.cookieService.get('token');
 		if (!this.cookie) {
 			return null;
 		} else {
