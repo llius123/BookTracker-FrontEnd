@@ -7,12 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
-import { ServicesModule } from 'src/services/services.module';
+import { IndexComponent } from './components/index/index.component';
+import { ServicesModule } from './services/services.module';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { ServicesModule } from 'src/services/services.module';
     HttpClientModule,
     ServicesModule
   ],
-  providers: [CookieService],
+  providers: [CookieService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

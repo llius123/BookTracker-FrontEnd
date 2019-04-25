@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginService } from "src/services/login.service";
 import { CookieService } from "ngx-cookie-service";
-import * as jwt_decode from "jwt-decode";
+import { LoginService } from "../services/login.service";
+import { Router } from '@angular/router';
 
 @Component({
 	selector: "app-login",
@@ -9,14 +9,14 @@ import * as jwt_decode from "jwt-decode";
 	styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-	constructor(private loginService: LoginService, private cookieService: CookieService) {}
+	constructor(private loginService: LoginService, private cookieService: CookieService, private router: Router) {}
 
 	ngOnInit() {}
 
 	public login(username: string, password: string): void {
 		this.loginService.login(username, password).subscribe(resp => {
-      const cookie = this.cookieService.get("token");
-      console.log(jwt_decode(cookie))
+			this.loginService.cookie = this.cookieService.get("token");
+			this.router.navigate(['index'])
 		});
 	}
 }
