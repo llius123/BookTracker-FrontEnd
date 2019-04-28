@@ -1,0 +1,19 @@
+.borde {
+	border: 1px solid black;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	.derecha {
+		width: 25%;
+	}
+	.izquierda {
+		width: 75%;
+		display: flex;
+		flex-direction: column;
+		.resultado {
+			height: 100%;
+		}
+	}
+}

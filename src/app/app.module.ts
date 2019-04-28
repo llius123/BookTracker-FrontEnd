@@ -10,12 +10,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './components/index/index.component';
 import { ServicesModule } from './services/services.module';
 import { AuthGuard } from './auth/auth-guard.service';
+import { BusquedaComponent } from './components/index/busqueda/busqueda.component';
+import { ResultadoComponent } from './components/index/resultado/resultado.component';
+import { GoodreadsComponent } from './components/index/resultado/goodreads/goodreads.component';
+import { GooglebooksComponent } from './components/index/resultado/googlebooks/googlebooks.component';
+import { BooktrakerComponent } from './components/index/resultado/booktraker/booktraker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    BusquedaComponent,
+    ResultadoComponent,
+    GoodreadsComponent,
+    GooglebooksComponent,
+    BooktrakerComponent
   ],
   imports: [
     BrowserModule,
