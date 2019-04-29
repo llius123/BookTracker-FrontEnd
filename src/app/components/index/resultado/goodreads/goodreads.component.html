@@ -1,3 +1,29 @@
 <p>
-  goodreads works!
+	Resultados GoodReads
 </p>
+<div class="contendor-libro borde" *ngIf="goodReads">
+	<div class="caja" *ngFor="let libro of goodReads.search.results.work | slice:0:5;">
+		<div class="imagen borde">
+			<img src="{{ libro.best_book.image_url }}" />
+		</div>
+		<div class="datos borde">
+			<div class="fecha borde">
+				<p>
+					Fecha publicacion:
+				</p>
+				{{ libro.original_publication_day }}- {{ libro.original_publication_month }}-
+				{{ libro.original_publication_year }}
+			</div>
+			<div class="titulo borde">
+				<p>
+					Titulo:
+				</p>
+				{{ libro.best_book.title }}
+				<p>
+					Autor:
+				</p>
+				{{ libro.best_book.author.name }}
+			</div>
+		</div>
+	</div>
+</div>

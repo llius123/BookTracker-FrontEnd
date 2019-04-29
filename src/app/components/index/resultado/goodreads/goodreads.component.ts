@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { GoodReadsInterface } from "src/app/model/GoodReadsInterface";
 
 @Component({
-  selector: 'app-goodreads',
-  templateUrl: './goodreads.component.html',
-  styleUrls: ['./goodreads.component.scss']
+	selector: "app-goodreads",
+	templateUrl: "./goodreads.component.html",
+	styleUrls: ["./goodreads.component.scss"]
 })
 export class GoodreadsComponent implements OnInit {
+	constructor() {}
+	@Input() goodReads: GoodReadsInterface;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

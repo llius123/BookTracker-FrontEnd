@@ -16,15 +16,19 @@ export class BookService {
 		return this.http.get<book>(`/api/search/${libro}`);
 	}
 
-	public searchApi(
-		libro: string
-	): Observable<{
-		GoogleBooks: GoogleBooksInterface;
-		GoodReadsBooks: GoodReadsInterface;
-	}> {
-		return this.http.get<{
-			GoogleBooks: GoogleBooksInterface;
-			GoodReadsBooks: GoodReadsInterface;
-		}>(`/api/searchapi/${libro}`);
+	/**
+	 * Busco en la api de GoodReads el libro
+	 * @param libro string
+	 */
+	public searchApiGoodReads(libro: string): Observable<GoodReadsInterface> {
+		return this.http.get<GoodReadsInterface>(`/api/searchapigood/${libro}`);
+	}
+
+	/**
+	 * Busco en la api de GoogleBooks el libro
+	 * @param libro string
+	 */
+	public searchApiGoogleBooks(libro: string): Observable<GoogleBooksInterface> {
+		return this.http.get<GoogleBooksInterface>(`/api/searchapigoogle/${libro}`);
 	}
 }

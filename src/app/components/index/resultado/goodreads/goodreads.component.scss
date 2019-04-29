@@ -1,0 +1,32 @@
+.borde {
+	border: 1px solid black;
+}
+.contendor-libro {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	height: auto;
+	overflow-x: scroll;
+	width: 100%;
+	.caja {
+		display: flex;
+		width: 275px;
+		height: auto;
+		border: 1px solid red;
+		.imagen {
+			width: 98px;
+		}
+		.datos {
+			width: 75%;
+			display: flex;
+			flex-direction: column;
+			.fecha {
+				//TODO Meter unas estaturas fijas
+			}
+			.titulo {
+				//TODO Meter unas estaturas fijas
+			}
+		}
+	}
+}
