@@ -1,3 +1,28 @@
 <p>
-  googlebooks works!
+	Resultados GoogleBooks
 </p>
+<div class="contendor-libro borde" *ngIf="googleBooks">
+	<div class="caja" *ngFor="let libro of googleBooks.items | slice: 0:5">
+		<div class="imagen borde">
+			<img src="{{ libro.volumeInfo.imageLinks.thumbnail }}" />
+		</div>
+		<div class="datos borde">
+			<div class="fecha borde">
+				<p>
+					Fecha publicacion:
+				</p>
+        {{libro.volumeInfo.publishedDate}}
+			</div>
+			<div class="titulo borde">
+				<p>
+					Titulo:
+				</p>
+				{{ libro.volumeInfo.title }}
+				<p>
+					Autor:
+				</p>
+				{{ libro.volumeInfo.author }}
+			</div>
+		</div>
+	</div>
+</div>
